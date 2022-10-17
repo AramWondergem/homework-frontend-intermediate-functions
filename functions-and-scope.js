@@ -27,6 +27,19 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // cumLaude([6, 4, 5]) geeft 0
 // cumLaude([8, 9, 4, 6, 10]) geeft 3
 
+function cumLaude(array) {
+    let countCumLaude = 0;
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] >= 8) {
+            countCumLaude++;
+        }
+    }
+    return countCumLaude;
+}
+
+console.log(cumLaude(grades));
+console.log(cumLaude([6, 4, 5]));
+console.log(cumLaude([8, 9, 4, 6, 10]));
 
 
 
@@ -53,12 +66,22 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // averageGrade([6, 4, 5]) geeft xxxx
 // averageGrade([8, 9, 4, 6, 10]) geeft xxxx
 
+function averageGrades(array) {
+    let sumOfArray = 0;
+    for (let i = 0; i < array.length; i++) {
+        sumOfArray+=array[i];
+    }
+    return (sumOfArray/array.length).toFixed(2)
+}
+
+console.log(averageGrades(grades));
+console.log(averageGrades([6, 4, 5]));
+console.log(averageGrades([8, 9, 4, 6, 10]));
+
 
 /* 2c: Afronden op twee decimalen */
 // Zorg ervoor dat het gemiddelde cijfer dat wordt teruggegeven uit de functie netjes wordt afgerond op twee decimalen.
 // Tip: Google is your best friend!
-
-
 
 
 /* Bonusopdracht: hoogste cijfer */
@@ -82,3 +105,18 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // highestGrade(grades) geeft 9
 // highestGrade([6, 4, 5]) geeft 6
 // highestGrade([8, 9, 4, 6, 10]) geeft 10
+
+function highestGrade(array) {
+    let highestNumber = 0;
+    for (let i = 0; i < array.length; i++) {
+        if (highestNumber<array[i]){
+            highestNumber = array[i];
+        }
+    }
+
+    return highestNumber;
+}
+
+console.log(highestGrade(grades));
+console.log(highestGrade([6, 4, 5]));
+console.log(highestGrade([8, 9, 4, 6, 10]));
